@@ -101,10 +101,10 @@ shield Player::getShield()
 {
 	return pShield;
 }
-Items Player::getItem(int index)
-{
-	return pInv[index];
-}
+//Items Player::getItem(int index)
+//{
+//	return pInv[index];
+//}
 
 //Prints
 void Player::showProfile()
@@ -122,22 +122,22 @@ void Player::showProfile()
 
 	cout << endl; //spacing
 
-	cout << "-- current;y equipped --" << endl; //weapon and shield
+	cout << "-- currently equipped --" << endl; //weapon and shield
 	cout << "Weapon: " << pWeapon.name << " [+" << pWeapon.atk << " atk]" << endl;
 	cout << "Shield: " << pShield.name << " [+" << pShield.def << " def]" << endl;
 }
-void Player::showInventoryAll()
-{
-	for (int i = 0; i < pInv.size(); i++)
-	{
-		//get item name and print in list like [0] item
-	}
-}
-void Player::showItem()
-{
-	//Plan: have item class have getName and getDescription functions to print out
-	//Basically this function will go [ItemIndex] Item name - Item description
-}
+//void Player::showInventoryAll()
+//{
+//	for (int i = 0; i < pInv.size(); i++)
+//	{
+//		//get item name and print in list like [0] item
+//	}
+//}
+//void Player::showItem()
+//{
+//	//Plan: have item class have getName and getDescription functions to print out
+//	//Basically this function will go [ItemIndex] Item name - Item description
+//}
 
 //Setters
 void Player::setHp(int val)
@@ -164,65 +164,65 @@ void Player::setShield(shield newShield)
 {
 	pShield = newShield;
 }
-void Player::addItem(Items&& newItem)
-{
-	//change 3 to max inventory slots if needed
-	if (pInv.size() < 3)
-	{
-		pInv.push_back(newItem);
-	}
-	else
-	{
-		cout << "Inventory Full!" << endl;
-		cout << "Discard an item from inventory? (yes/no): ";
-		string temp;
-		cin >> temp;
-		if (temp == "yes" || temp == "Yes" || temp == "YES")
-		{
-			bool done = false;
-			do
-			{
-				showInventoryAll();
-				cout << "Type in the index of the item you wish to remove: ";
-				int index = -1;
-				cin >> index;
-				if (index < pInv.size() || index >= 0)
-				{
-					removeItem(index);
-					done = true;
-				}
-				else
-				{
-					cout << "Invalid index, please try again." << endl;
-				}
-			} while (!done);
-
-			//Put new item in
-			pInv.push_back(newItem);
-		}
-		else if (temp == "no" || temp == "No" || temp == "NO")
-		{
-			cout << "Item dropped." << endl;
-		}
-		else
-		{
-			cout << "Invalid input, please try again!" << endl;
-		}
-	}
-}
-void Player::removeItem(int index)
-{
-	if (index < pInv.size() && index >= 0)
-	{
-		pInv.erase(pInv.begin() + index);
-		cout << "Dropped item";
-	}
-	else if (pInv.size() == 0)
-	{
-		throw new exception("Inventory is empty, nothing can be dropped!");
-	}
-	else
-	{
-		throw new exception("Item cannot be dropped!");
-	}
-}
+//void Player::addItem(Items&& newItem)
+//{
+//	//change 3 to max inventory slots if needed
+//	if (pInv.size() < 3)
+//	{
+//		pInv.push_back(newItem);
+//	}
+//	else
+//	{
+//		cout << "Inventory Full!" << endl;
+//		cout << "Discard an item from inventory? (yes/no): ";
+//		string temp;
+//		cin >> temp;
+//		if (temp == "yes" || temp == "Yes" || temp == "YES")
+//		{
+//			bool done = false;
+//			do
+//			{
+//				showInventoryAll();
+//				cout << "Type in the index of the item you wish to remove: ";
+//				int index = -1;
+//				cin >> index;
+//				if (index < pInv.size() || index >= 0)
+//				{
+//					removeItem(index);
+//					done = true;
+//				}
+//				else
+//				{
+//					cout << "Invalid index, please try again." << endl;
+//				}
+//			} while (!done);
+//
+//			//Put new item in
+//			pInv.push_back(newItem);
+//		}
+//		else if (temp == "no" || temp == "No" || temp == "NO")
+//		{
+//			cout << "Item dropped." << endl;
+//		}
+//		else
+//		{
+//			cout << "Invalid input, please try again!" << endl;
+//		}
+//	}
+//}
+//void Player::removeItem(int index)
+//{
+//	if (index < pInv.size() && index >= 0)
+//	{
+//		pInv.erase(pInv.begin() + index);
+//		cout << "Dropped item";
+//	}
+//	else if (pInv.size() == 0)
+//	{
+//		throw new exception("Inventory is empty, nothing can be dropped!");
+//	}
+//	else
+//	{
+//		throw new exception("Item cannot be dropped!");
+//	}
+//}

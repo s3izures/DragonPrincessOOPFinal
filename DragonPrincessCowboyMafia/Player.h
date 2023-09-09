@@ -31,7 +31,7 @@ private:
 	int pDef;
 	int pSpd;
 
-	vector<Items&&> pInv; //Inventory vector, add Item objects into it
+	//vector<Items&&> pInv; //Inventory vector, add Item objects into it
 
 public:
 	//Constructors
@@ -51,8 +51,8 @@ public:
 
 	//Prints
 	void showProfile();
-	void showInventoryAll(); //WIP!!!
-	void showItem(); //WIP!!!
+	//void showInventoryAll(); //WIP!!!
+	//void showItem(); //WIP!!!
 
 	//Setter & the like
 	void setHp(int val);
@@ -61,8 +61,7 @@ public:
 	void setSpd(int val);
 	void setWeapon(weapon newWeapon);
 	void setShield(shield newShield);
-	void addItem(Items&& newItem); //If player has too many items, maybe ask which to remove?
-	void removeItem(int index); //Type in index of items, remove item there with vector.erase(vec.begin() + index);
-
+	//void addItem(Items&& newItem); //If player has too many items, maybe ask which to remove?
+	//void removeItem(int index); //Type in index of items, remove item there with vector.erase(vec.begin() + index);
 };
 

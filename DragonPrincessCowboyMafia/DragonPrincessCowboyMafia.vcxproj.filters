@@ -29,5 +29,8 @@
     <ClCompile Include="Items.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MainGame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
