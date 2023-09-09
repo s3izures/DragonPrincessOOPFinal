@@ -12,7 +12,7 @@ bool confirmInput();
 Player characterCreation();
 Dragon dragonCreation();
 
-
+//Missing: Inventory, Items, Enemy
 
 //Main
 int main()
@@ -48,6 +48,10 @@ int main()
 		cout << "Princess " << player.getName() << " stood up, allowing for her dragon to climb up her arm and onto her shoulder. " << dragon.getName() << " settled comfortably, tail curled up across her back." << endl;
 		cout << endl;
 		cout << "pease enter scwript" << endl; //ok now please continue, you can use getInput to get the player input, it only works with strings.
+
+		//Part 1 - Escaping
+		//Part 2 - Running
+		//Part 3 - Final Battle
 }
 
 
