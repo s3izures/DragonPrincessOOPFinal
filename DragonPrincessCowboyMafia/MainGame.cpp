@@ -5,7 +5,7 @@
 using namespace std;
 
 //Utility Functions
-void startScreen(); //WIP
+void startScreen();
 int diceRoll(int sides);
 string getInput();
 bool confirmInput();
@@ -23,7 +23,6 @@ int main()
 
 		//Player creation
 		Player player = characterCreation();
-		cout << endl; //spacing
 		Dragon dragon = dragonCreation();
 
 		//Lore Variables
@@ -36,6 +35,9 @@ int main()
 	//GAME STORY
 	// R"(text here)" is used so that raw text will be printed
 	//Highlight decisions that players can make in CAPS
+
+		//Setting: nighttime
+		//variables that can be used: Player (name, class), Dragon (name, scales color, eye color) [check get functions]
 
 		//Introduction
 		cout << "pease enter scwript" << endl;
@@ -77,7 +79,7 @@ void startScreen()
 
 			if (opt == "Yes" || opt == "yes" || opt == "YES")
 			{
-				cout << "===== IMPORTANT =====" << endl;
+				cout << endl << "===== IMPORTANT =====" << endl;
 				cout << "To check your player profile and stats (outside of battle), type PROFILE" << endl;
 				cout << "To check your inventory, type INVENTORY" << endl;
 
@@ -193,21 +195,21 @@ Player characterCreation()
 
 	cout << "Oh, of course. Princess " << pName << ", that was her. What kind of princess was she?" << endl;
 
-		//Display paths
-		cout << "Select a path for the princess to take..." << endl;
-		cout << endl;
-		cout << "[1] Adventurer" << endl;
-		cout << "DESCRIPTION HERE" << endl;
-		cout << endl;
-		cout << "[2] Warrior" << endl;
-		cout << "DESCRIPTION HERE" << endl;
-		cout << endl;
-		cout << "[3] Pacifist" << endl;
-		cout << "DESCRIPTION HERE" << endl;
-		cout << endl;
-
-		do //Will loop until player gets class right
+		do
 		{
+			//Display paths
+			cout << "Select a path for the princess to take..." << endl;
+			cout << endl;
+			cout << "[1] Adventurer" << endl;
+			cout << "DESCRIPTION HERE" << endl;
+			cout << endl;
+			cout << "[2] Warrior" << endl;
+			cout << "DESCRIPTION HERE" << endl;
+			cout << endl;
+			cout << "[3] Pacifist" << endl;
+			cout << "DESCRIPTION HERE" << endl;
+			cout << endl;
+
 			cout << "Enter the number/index of the chosen path." << endl;
 			cout << "> ";
 			int tempClass = 0;
@@ -242,6 +244,8 @@ Player characterCreation()
 			if (tempClass != 0)
 				done = confirmInput();
 
+			system("CLS");
+
 		} while (!done);
 
 	return Player(pName, pClass);
@@ -256,21 +260,26 @@ Dragon dragonCreation()
 	
 	do {
 		cout << "LORE HERE" << endl;
-		cout << "What did she name the dragon?" << endl;
+		cout << "That dragon's name was..." << endl;
 		name = getInput();
 		done = confirmInput();
+		system("CLS");
 	} while (!done);
 
 	do {
-		cout << "What color were the dragon's scales?" << endl;
+		cout << "LORE HERE" << endl;
+		cout << "The color of the dragon was..." << endl;
 		scales = getInput();
 		done = confirmInput();
+		system("CLS");
 	} while (!done);
 
 	do {
-		cout << "What color were the dragon's eyes?" << endl;
+		cout << "LORE HERE" << endl;
+		cout << "The dragon's eyes were colored..." << endl;
 		eyes = getInput();
 		done = confirmInput();
+		system("CLS");
 	} while (!done);
 
 	return Dragon(name, scales, eyes);
