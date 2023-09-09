@@ -18,6 +18,11 @@ int main()
 		//Randomly generated number that will determine which random events appear in a single session (1-3)
 		int chaosControl = diceRoll(3);
 
+		//Random events summary:
+		//1 = events here
+		//2 =
+		//3 =
+
 		//WIP: will change dialogue to be more immersive
 		startScreen();
 		system("CLS");
@@ -35,6 +40,7 @@ int main()
 
 	//GAME STORY
 	// R"(text here)" is used so that raw text will be printed
+
 		//Introduction
 		cout << "pease enter scwript" << endl;
 }
@@ -61,6 +67,7 @@ Player characterCreation()
 			cout << "Enter name: ";
 			cin >> pName;
 
+			//confirmation
 			bool confirm = false;
 			do
 			{
@@ -133,7 +140,8 @@ Player characterCreation()
 				cout << "Invalid input, please try again." << endl;
 			}
 
-			if (classDone) //confirm
+			//confirmation
+			if (classDone)
 			{
 				bool confirm = false;
 				do
