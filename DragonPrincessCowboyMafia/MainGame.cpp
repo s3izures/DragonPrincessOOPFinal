@@ -1,13 +1,16 @@
 #include "Player.h"
-#include "Items.h"
+#include "Dragon.h"
 #include <iostream>
 #include <time.h>
 using namespace std;
 
 //Utility Functions
 void startScreen(); //WIP
-Player characterCreation();
 int diceRoll(int sides);
+string getInput();
+bool confirmInput();
+Player characterCreation();
+Dragon dragonCreation();
 
 
 
@@ -15,21 +18,13 @@ int diceRoll(int sides);
 int main()
 {
 	//GAME INITIALIZATION
-		//Randomly generated number that will determine which random events appear in a single session (1-3)
-		int chaosControl = diceRoll(3);
-
-		//Random events summary:
-		//1 = events here
-		//2 =
-		//3 =
-
-		//WIP: will change dialogue to be more immersive
 		startScreen();
 		system("CLS");
 
 		//Player creation
 		Player player = characterCreation();
-		//need to add dragon creation
+		cout << endl; //spacing
+		Dragon dragon = dragonCreation();
 
 		//Lore Variables
 		string kingdomName = "PLACEHOLDER kingdom";
@@ -138,55 +133,63 @@ void startScreen()
 
 	} while (!done);
 }
+int diceRoll(int sides)
+{
+	//Sides stands for the number of sides on a dice
+	srand(time(NULL));
+	return rand() % sides + 1;
+}
+string getInput()
+{
+	string i;
+	cout << "> ";
+	cin >> i;
+	return i;
+}
+bool confirmInput()
+{
+	cout << "Confirm? (YES/NO): ";
+	string temp;
+	cin >> temp;
+	if (temp == "yes" || temp == "Yes" || temp == "YES")
+	{
+		return true;
+	}
+	else if (temp == "no" || temp == "No" || temp == "NO")
+	{
+		return false;
+	}
+	else
+	{
+		cout << "Invalid input, please try again!" << endl;
+		return confirmInput();
+	}
+}
 Player characterCreation()
 {
 	//Values needed to create the o class
 	string pName;
 	string pClass;
+	bool done;
 
-	//Name: loop until player confirms
-	bool nameDone = false;
-
+	//Name
 		do
 		{
 			cout << "A girl sits in front of the window, moonlight shining down upon her. With a sigh, she peers down on her- No. Her father's kingdom, gathering courage for what she is about to do next. Looking towards her right, she gazes upon her reflection in the mirror. Her name is... oh, what is her name? That's odd. She can't seem to remember." << endl;
 			cout << endl;
 			cout << "Remind the princess of her name..." << endl;
-			cout << "> ";
-			cin >> pName;
+			pName = getInput();
 
 			//confirmation
-			bool confirm = false;
-			do
-			{
-				cout << "Is this truly her name? (YES/NO)" << endl;
-				cout << "> ";
-				string temp;
-				cin >> temp;
+			done = confirmInput();
+			system("CLS");
 
-				if (temp == "yes" || temp == "Yes" || temp == "YES")
-				{
-					nameDone = true;
-					confirm = true;
-				}
-				else if (temp == "no" || temp == "No" || temp == "NO")
-				{
-					nameDone = false;
-					confirm = true;
-				}
-				else
-				{
-					cout << "Invalid input, please try again!" << endl;
-				}
-			} while (!confirm);
+		} while (!done);
 
-		} while (!nameDone);
+		system("CLS");
 
-		system("CLS"); //Clear screen
-
-	//Class Selection:
+	//Class Selection
 	//done via entering number to avoid spelling error mistakes from player
-	bool classDone = false;
 
 	cout << "Oh, of course. Princess " << pName << ", that was her. What kind of princess was she?" << endl;
 
@@ -210,32 +213,10 @@ Player characterCreation()
 			int tempClass = 0;
 			cin >> tempClass;
 
-			//confirmation
-			while (!classDone && tempClass <= 3 && tempClass >=1 )
-			{
-				cout << "Confirm path? (yes/no): ";
-				string temp;
-				cin >> temp;
-				if (temp == "yes" || temp == "Yes" || temp == "YES")
-				{
-					classDone = true;
-				}
-				else if (temp == "no" || temp == "No" || temp == "NO")
-				{
-					classDone = false;
-				}
-				else
-				{
-					cout << "Invalid input, please try again!" << endl;
-					tempClass = 0;
-				}
-			}
-
 			if (tempClass == 1)
 			{
 				system("CLS");
 				pClass = "Adventurer";
-
 				cout << pName << " was a free-spirited girl, with stars in her eyes and the great seas in her blood. She was swift and graceful, often leaving the castle to gaze upon the outside world, wondering what lies beyond the horizon." << endl;
 			}
 			else if (tempClass == 2)
@@ -256,14 +237,41 @@ Player characterCreation()
 				cout << "Invalid input, please try again." << endl;
 			}
 
-		} while (!classDone);
+			//confirmation
+			cout << endl;
+			if (tempClass != 0)
+				done = confirmInput();
 
-	Player temp(pName, pClass);
-	return temp;
+		} while (!done);
+
+	return Player(pName, pClass);
 }
-int diceRoll(int sides)
+Dragon dragonCreation()
 {
-	//Sides stands for the number of sides on a dice
-	srand(time(NULL));
-	return rand() % sides + 1;
+	//Variables
+	string name;
+	string scales;
+	string eyes;
+	bool done = false;
+	
+	do {
+		cout << "LORE HERE" << endl;
+		cout << "What did she name the dragon?" << endl;
+		name = getInput();
+		done = confirmInput();
+	} while (!done);
+
+	do {
+		cout << "What color were the dragon's scales?" << endl;
+		scales = getInput();
+		done = confirmInput();
+	} while (!done);
+
+	do {
+		cout << "What color were the dragon's eyes?" << endl;
+		eyes = getInput();
+		done = confirmInput();
+	} while (!done);
+
+	return Dragon(name, scales, eyes);
 }

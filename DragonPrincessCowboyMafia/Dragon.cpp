@@ -10,7 +10,7 @@ Dragon::Dragon()
 	dColorEyes = "Green";
 	dHp = 100;
 }
-Dragon::Dragon(string name, string scales, string eyes, int hp)
+Dragon::Dragon(string name, string scales, string eyes)
 {
 	dName = name;
 	dColorScales = scales;

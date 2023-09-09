@@ -12,7 +12,7 @@ private:
 	int dHp;
 public:
 	Dragon();
-	Dragon(string name, string scales, string eyes, int hp);
+	Dragon(string name, string scales, string eyes);
 	int getHp();
 	string getName();
 	string getScales();
