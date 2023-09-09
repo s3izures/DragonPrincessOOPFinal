@@ -50,9 +50,11 @@ public:
 	void showInventoryAll();
 	void showItem();
 
-	//Other
-	void changeWeapon();
-	void changeShield();
+	//Setter / Add
+	void setWeapon(weapon newWeapon);
+	void setShield(shield newShield);
+	void addItem(Items&& newItem); //If player has too many items, maybe ask which to remove?
+	void removeItem(int index); //Type in index of items, remove item there with vector.erase(vec.begin() + index);
 
 };
 
