@@ -29,7 +29,8 @@ int main()
 
 
 	//GAME STORY
-		//wip one sec
+		//Introduction
+		cout << "fuk" << endl;
 }
 
 
