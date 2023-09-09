@@ -30,6 +30,9 @@ int main()
 		string kingName = "PLACEHOLDER queen elizabeth";
 		string knightName = "PLACEHOLDER knight";
 
+		//Other Variables
+		string opt; //use with getInput(); (like opt = getInput();)
+
 
 
 	//GAME STORY
@@ -40,7 +43,11 @@ int main()
 		//variables that can be used: Player (name, class), Dragon (name, scales color, eye color) [check get functions]
 
 		//Introduction
-		cout << "pease enter scwript" << endl;
+		cout << R"("We need to leave, )" << dragon.getName() << R"(. It's not safe for you to stay here.")" << endl;
+		cout << endl;
+		cout << "Princess " << player.getName() << " stood up, allowing for her dragon to climb up her arm and onto her shoulder. " << dragon.getName() << " settled comfortably, tail curled up across her back." << endl;
+		cout << endl;
+		cout << "pease enter scwript" << endl; //ok now please continue, you can use getInput to get the player input, it only works with strings.
 }
 
 
@@ -259,7 +266,10 @@ Dragon dragonCreation()
 	bool done = false;
 	
 	do {
-		cout << "LORE HERE" << endl;
+		cout << "Glancing away from the mirror and pausing her self-reflection, her eyes landed on her beloved companion. It had been her mother's last gift, being by her side since it first hatched on her fifth birthday." << endl;
+		cout << endl;
+		cout << "Curled up and sleeping soundly in a bed made just for it, was a baby dragon. Still far too young to be mighty and devour kingdoms, yet far more loyal to her than anyone else in this entire world. She saw it as more than just a fancy last gift- she saw it as family." << endl;
+		cout << endl;
 		cout << "That dragon's name was..." << endl;
 		name = getInput();
 		done = confirmInput();
@@ -267,7 +277,9 @@ Dragon dragonCreation()
 	} while (!done);
 
 	do {
-		cout << "LORE HERE" << endl;
+		cout << name << R"(, her little dragon who had done nothing wrong. And yet, her father- the king of the country- had rather evil intentions towards the poor thing. She can't let that haappen.
+
+With a sigh, she strode over and sat next to her companion, gently petting its head. "Wake up, silly." She gently shook it.)" << endl;
 		cout << "The color of the dragon was..." << endl;
 		scales = getInput();
 		done = confirmInput();
@@ -275,7 +287,7 @@ Dragon dragonCreation()
 	} while (!done);
 
 	do {
-		cout << "LORE HERE" << endl;
+		cout << "With a great yawn, the " << scales << " dragon slowly woke up, stretching as it leaned against its mistress's hand. It took a few more second to fully wake, blinking open its eyes." << endl;
 		cout << "The dragon's eyes were colored..." << endl;
 		eyes = getInput();
 		done = confirmInput();
