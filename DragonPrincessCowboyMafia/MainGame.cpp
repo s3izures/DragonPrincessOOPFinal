@@ -15,7 +15,7 @@ int diceRoll(int sides);
 int main()
 {
 	//GAME INITIALIZATION
-		//Randomly generated number that will determine which random events appear in a single session
+		//Randomly generated number that will determine which random events appear in a single session (1-3)
 		int chaosControl = diceRoll(3);
 
 		//WIP: will change dialogue to be more immersive
@@ -26,11 +26,17 @@ int main()
 		Player player = characterCreation();
 		system("CLS");
 
+		//Lore Variables
+		string kingdomName = "PLACEHOLDER kingdom";
+		string kingName = "PLACEHOLDER queen elizabeth";
+		string knightName = "PLACEHOLDER knight";
+
 
 
 	//GAME STORY
+	// R"(text here)" is used so that raw text will be printed
 		//Introduction
-		cout << "fuk" << endl;
+		cout << player.getName() << " is a resident of " << kingdomName << endl;
 }
 
 
