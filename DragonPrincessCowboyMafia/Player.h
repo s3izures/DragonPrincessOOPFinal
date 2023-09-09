@@ -17,7 +17,6 @@ private:
 	int pHp;
 	int pAtk;
 	int pDef;
-	int pSpd;
 
 public:
 	//Constructors
@@ -30,12 +29,11 @@ public:
 	int getStat(int stat);
 
 	//Prints
-	void showProfile();
+	void showProfile(Dragon&& dragon);
 
 	//Setter & the like
 	void setHp(int val);
 	void setAtk(int val);
 	void setDef(int val);
-	void setSpd(int val);
 };
 
