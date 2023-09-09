@@ -3,6 +3,7 @@
 #include <string>
 #include <iostream>
 #include <vector>
+#include <exception>
 using namespace std;
 
 //Constructors
@@ -207,5 +208,21 @@ void Player::addItem(Items&& newItem)
 		{
 			cout << "Invalid input, please try again!" << endl;
 		}
+	}
+}
+void Player::removeItem(int index)
+{
+	if (index < pInv.size() && index >= 0)
+	{
+		pInv.erase(pInv.begin() + index);
+		cout << "Dropped item";
+	}
+	else if (pInv.size() == 0)
+	{
+		throw new exception("Inventory is empty, nothing can be dropped!");
+	}
+	else
+	{
+		throw new exception("Item cannot be dropped!");
 	}
 }
