@@ -14,6 +14,13 @@ Dragon dragonCreation();
 //Missing: Inventory, Items, Enemy
 //Please do a check on getInput on Profile and Inventory commands from player (ex: if they enter profile, run player.profile)
 
+//Lambda
+auto diceRoll = [](int d) {
+	//Sides stands for the number of sides on a dice
+	srand(time(NULL));
+	return rand() % d + 1;
+};
+
 //Main
 int main()
 {
@@ -146,11 +153,6 @@ void startScreen()
 
 	} while (!done);
 }
-auto diceRoll = [](int d) {
-	//Sides stands for the number of sides on a dice
-	srand(time(NULL));
-	return rand() % d + 1;
-};
 string getInput()
 {
 	string i;
