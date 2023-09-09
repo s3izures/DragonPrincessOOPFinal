@@ -6,7 +6,6 @@ using namespace std;
 
 //Utility Functions
 void startScreen();
-int diceRoll(int sides);
 string getInput();
 bool confirmInput();
 Player characterCreation();
@@ -142,12 +141,11 @@ void startScreen()
 
 	} while (!done);
 }
-int diceRoll(int sides)
-{
+auto diceRoll = [](int d) {
 	//Sides stands for the number of sides on a dice
 	srand(time(NULL));
-	return rand() % sides + 1;
-}
+	return rand() % d + 1;
+};
 string getInput()
 {
 	string i;
