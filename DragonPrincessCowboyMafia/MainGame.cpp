@@ -36,7 +36,7 @@ int main()
 	//GAME STORY
 	// R"(text here)" is used so that raw text will be printed
 		//Introduction
-		cout << player.getName() << " is a resident of " << kingdomName << endl;
+		cout << "pease enter scwript" << endl;
 }
 
 
