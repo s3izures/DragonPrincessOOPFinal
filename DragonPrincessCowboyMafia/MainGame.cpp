@@ -30,7 +30,6 @@ int main()
 		//Player creation
 		Player player = characterCreation();
 		//need to add dragon creation
-		system("CLS");
 
 		//Lore Variables
 		string kingdomName = "PLACEHOLDER kingdom";
@@ -133,6 +132,7 @@ void startScreen()
 		}
 		else
 		{
+			system("CLS");
 			cout << "Invalid response, please try again!" << endl;
 		}
 
@@ -150,8 +150,8 @@ Player characterCreation()
 		do
 		{
 			cout << "A girl sits in front of the window, moonlight shining down upon her. With a sigh, she peers down on her- No. Her father's kingdom, gathering courage for what she is about to do next. Looking towards her right, she gazes upon her reflection in the mirror. Her name is... oh, what is her name? That's odd. She can't seem to remember." << endl;
-			cout << "Remind the princess of her name..." << endl;
 			cout << endl;
+			cout << "Remind the princess of her name..." << endl;
 			cout << "> ";
 			cin >> pName;
 
@@ -210,52 +210,50 @@ Player characterCreation()
 			int tempClass = 0;
 			cin >> tempClass;
 
+			//confirmation
+			while (!classDone && tempClass <= 3 && tempClass >=1 )
+			{
+				cout << "Confirm path? (yes/no): ";
+				string temp;
+				cin >> temp;
+				if (temp == "yes" || temp == "Yes" || temp == "YES")
+				{
+					classDone = true;
+				}
+				else if (temp == "no" || temp == "No" || temp == "NO")
+				{
+					classDone = false;
+				}
+				else
+				{
+					cout << "Invalid input, please try again!" << endl;
+					tempClass = 0;
+				}
+			}
+
 			if (tempClass == 1)
 			{
+				system("CLS");
 				pClass = "Adventurer";
-				classDone = true;
+
+				cout << pName << " was a free-spirited girl, with stars in her eyes and the great seas in her blood. She was swift and graceful, often leaving the castle to gaze upon the outside world, wondering what lies beyond the horizon." << endl;
 			}
 			else if (tempClass == 2)
 			{
+				system("CLS");
 				pClass = "Warrior";
-				classDone = true;
+				cout << pName << " was hardworking despite her royal position, her hands callused from training with wooden swords. Fire blazed in her fierce eyes, a hidden strength underneath the silken fabrics and neat appearance." << endl;
 			}
 			else if (tempClass == 3)
 			{
+				system("CLS");
 				pClass = "Pacifist";
-				classDone = true;
+				cout << pName << " was a gentle, kind soul with a heart of gold. Her smile warmed the room and her eyes were filled with kindness for all creatures. Despite bearing power dur to her position, she refused to use it against those who did not deserve cruelty," << endl;
 			}
 			else
 			{
 				tempClass = 0;
-				classDone = false;
 				cout << "Invalid input, please try again." << endl;
-			}
-
-			//confirmation
-			if (classDone)
-			{
-				bool confirm = false;
-				do
-				{
-					cout << "Your chosen path is " << pClass << ". Confirm? (yes/no): ";
-					string temp;
-					cin >> temp;
-					if (temp == "yes" || temp == "Yes" || temp == "YES")
-					{
-						classDone = true;
-						confirm = true;
-					}
-					else if (temp == "no" || temp == "No" || temp == "NO")
-					{
-						classDone = false;
-						confirm = true;
-					}
-					else
-					{
-						cout << "Invalid input, please try again!" << endl;
-					}
-				} while (!confirm);
 			}
 
 		} while (!classDone);
