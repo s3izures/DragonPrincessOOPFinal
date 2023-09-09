@@ -11,7 +11,8 @@ bool confirmInput();
 Player characterCreation();
 Dragon dragonCreation();
 
-
+//Missing: Inventory, Items, Enemy
+//Please do a check on getInput on Profile and Inventory commands from player (ex: if they enter profile, run player.profile)
 
 //Main
 int main()
@@ -33,7 +34,7 @@ int main()
 		string opt; //use with getInput(); (like opt = getInput();)
 
 
-
+		
 	//GAME STORY
 	// R"(text here)" is used so that raw text will be printed
 	//Highlight decisions that players can make in CAPS
@@ -47,6 +48,10 @@ int main()
 		cout << "Princess " << player.getName() << " stood up, allowing for her dragon to climb up her arm and onto her shoulder. " << dragon.getName() << " settled comfortably, tail curled up across her back." << endl;
 		cout << endl;
 		cout << "pease enter scwript" << endl; //ok now please continue, you can use getInput to get the player input, it only works with strings.
+
+		//Part 1 - Escaping
+		//Part 2 - Running
+		//Part 3 - Final Battle
 }
 
 
