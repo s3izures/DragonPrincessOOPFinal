@@ -21,6 +21,15 @@ auto diceRoll = [](int d) {
 	return rand() % d + 1;
 };
 
+auto setLower = [](string str) {
+	const int length = str.length() + 1;
+	char* char_array = new char[length];
+	for (int x = 0; x < length; x++) {
+		char_array[x] = tolower(str[x]);
+	}
+	return char_array;
+};
+
 //Main
 int main()
 {
