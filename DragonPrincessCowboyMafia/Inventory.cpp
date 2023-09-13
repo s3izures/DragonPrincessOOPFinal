@@ -21,7 +21,27 @@ void Inventory::SetInventory(vector<invenItem> t_inventory)
 
 void Inventory::PrintInventory()
 {
-
+    system("CLS");
+    cout << "===== INVENTORY =====" << endl;
+    if (inventory.size() == 0) {
+        cout << "Inventory is empty." << endl;
+    }
+    else {
+        bool first = true;
+        for (auto invenItem : inventory) {
+            if (!first) {
+                cout << "---------------------" << endl;
+            }
+            cout << invenItem.item.GetName() << " x" << invenItem.count << endl;
+            cout << invenItem.item.GetDescription() << endl;
+            cout << "Uses: " << invenItem.uses << "/" << invenItem.item.GetUses() << endl;
+            if (first) {
+                first = false;
+            }
+        }
+    }
+    cout << "=====================" << endl;
+    cout << endl;
 }
 
 void Inventory::AddItem(Item t_item)
