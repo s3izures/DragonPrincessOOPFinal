@@ -310,3 +310,11 @@ With a sigh, she strode over and sat next to her companion, gently petting its h
 
 	return Dragon(name, scales, eyes);
 }
+vector<Item> createAllItems() {
+	vector<Item> items;
+	items.push_back(Item("Banana", "damage", 15, 1, "[Description]", "[UseMessage]"));
+	items.push_back(Item("Health Potion", "heal", 15, 1, "[Description]", "[UseMessage]"));
+	items.push_back(Item("Shield", "block", 15, 2, "[Description]", "[UseMessage]"));
+	items.push_back(Item("Enchanted Sword", "damage", 15, -1, "[Description]", "[UseMessage]"));
+	return items;
+}
