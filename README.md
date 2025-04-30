@@ -3,10 +3,10 @@
 
 ### To-Do List
 - [X] Character Creation
-- [ ] Story + Script Implementation
-- [ ] Inventory System
+- [X] Story + Script Implementation
+- [X] Inventory System
 - [X] Lambda Diceroll System
-- [ ] Decision System
+- [X] Decision System
 
 Final project for **OOP C++ II - Summer 2023**
 
